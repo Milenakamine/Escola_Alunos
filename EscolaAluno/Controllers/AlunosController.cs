@@ -58,7 +58,7 @@ namespace EscolaAluno.Controllers
                 //busca aluno por id
                 Aluno a = alunaRepository.BuscarPorId(id);
 
-                //faz a verificacao no contexto para ver se o produto foi encontrado 
+                //faz a verificacao no contexto para ver se o aluno foi encontrado 
                 //caso nao for encontrado o sistema retornara NotFound 
                 if (a == null)
                     return NotFound();
@@ -106,7 +106,7 @@ namespace EscolaAluno.Controllers
             try
             {  //define o id do aluno
                 a.Id = id;
-                //edita o produto
+                //edita o aluno
                 alunaRepository.Editar(a);
 
                 //retorna o Ok com os dados do aluno
@@ -136,7 +136,7 @@ namespace EscolaAluno.Controllers
                 if (a == null)
                     return NotFound();
 
-                //caso exista remove o produto
+                //caso exista remove o aluno
                 alunaRepository.Remover(id);
                 //retorna Ok
                 return Ok(id);
