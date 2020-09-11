@@ -21,39 +21,132 @@ namespace EscolaAluno.Controllers
             alunaRepository = new AlunaRepository();
         }
 
+
+
+
         [HttpGet]
-        public List<Aluno> Get()
+        public IActionResult Get()
         {
-            return alunaRepository.Listar();
+            try
+            {
+                //lista de alunos
+                var alunos = alunaRepository.Listar();
+
+                //verifica se existe no conxtexto atual
+                //caso nao exista ele retorna NoContext
+                if (alunos.Count == 0)
+                    return NoContent();
+
+                //se existir retorno vai passar o Ok e os alunos cadastrados
+                return Ok(alunos);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
-        // GET api/<RacaController>/5
+
+
+
+        // GET api/<AlunoController>/5
         [HttpGet("{id}")]
-        public Aluno Get(Guid id)
+        public IActionResult Get(Guid id)
         {
-            return alunaRepository.BuscarPorId(id);
+            try
+            { 
+                //busca aluno por id
+                Aluno a = alunaRepository.BuscarPorId(id);
+
+                //faz a verificacao no contexto para ver se o produto foi encontrado 
+                //caso nao for encontrado o sistema retornara NotFound 
+                if (a == null)
+                    return NotFound();
+
+                //se existir retorno vai passar o Ok e os dados dos alunos 
+                return Ok(a);
+            }
+            catch (Exception ex)
+            {
+                //caso ocorra algum erro retorno BadRequest e a mensagem da exception
+                return BadRequest(ex.Message);
+            }
         }
+
+
+
 
         // POST api/<AlunoController>
         [HttpPost]
-        public void Post(Aluno a)
+        public IActionResult Post(Aluno a)
         {
-           alunaRepository.Adicionar(a);
+            try
+            {
+                //adiciona um novo aluno
+                alunaRepository.Adicionar(a);
+
+                //retorna Ok se o aluno tiver sido cadastrado
+                return Ok(a);
+            }
+            catch (Exception ex)
+            {
+                //caso ocorra algum erro retorno BadRequest e a mensagem da exception
+                return BadRequest(ex.Message);
+            }
         }
+
+
+
+
 
         // PUT api/<AlunoController>/5
         [HttpPut("{id}")]
-        public void Put(Guid id, Aluno a)
+        public IActionResult Put(Guid id, Aluno a)
         {
-            a.Id = id;
-            alunaRepository.Editar(a);
+            try
+            {  //define o id do aluno
+                a.Id = id;
+                //edita o produto
+                alunaRepository.Editar(a);
+
+                //retorna o Ok com os dados do aluno
+                return Ok(a);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
+
+
+
+
 
         // DELETE api/<AlunoController>/5
         [HttpDelete("{id}")]
-        public void Delete(Guid id)
+        public IActionResult Delete(Guid id)
         {
-            alunaRepository.Remover(id);
+            try
+            {
+                //busca o aluno pelo Id
+                var a = alunaRepository.BuscarPorId(id);
+
+                //verifica se o aluno existe
+                //caso não exista retorna NotFound
+                if (a == null)
+                    return NotFound();
+
+                //caso exista remove o produto
+                alunaRepository.Remover(id);
+                //retorna Ok
+                return Ok(id);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
+
+
     }
 }
