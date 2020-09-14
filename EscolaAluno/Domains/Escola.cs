@@ -8,15 +8,14 @@ namespace EscolaAluno.Domains
 {
     public class Escola : BaseDomain
     {
-
-        //GUID padrao de segurança, gera id 
-     
-
         public string Nome { get; set; }
 
-      
+        //relacionamento de 1,N
+        public List<AlunosEscola> AlunosEscolas { get; set; }
 
-
-
+        public Escola()
+        {
+            AlunosEscolas = new List<AlunosEscola>();
+        }
     }
 }

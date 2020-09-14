@@ -13,8 +13,6 @@ C:\Users\fic\source\repos\Escola\EscolaAluno\bin\Debug\netcoreapp3.1\EscolaAluno
 C:\Users\fic\source\repos\Escola\EscolaAluno\bin\Debug\netcoreapp3.1\EscolaAluno.runtimeconfig.dev.json
 C:\Users\fic\source\repos\Escola\EscolaAluno\bin\Debug\netcoreapp3.1\EscolaAluno.dll
 C:\Users\fic\source\repos\Escola\EscolaAluno\bin\Debug\netcoreapp3.1\EscolaAluno.pdb
-C:\Users\fic\source\repos\Escola\EscolaAluno\obj\Debug\netcoreapp3.1\EscolaAluno.csproj.CoreCompileInputs.cache
-C:\Users\fic\source\repos\Escola\EscolaAluno\obj\Debug\netcoreapp3.1\EscolaAluno.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\fic\source\repos\Escola\EscolaAluno\obj\Debug\netcoreapp3.1\EscolaAluno.dll
 C:\Users\fic\source\repos\Escola\EscolaAluno\obj\Debug\netcoreapp3.1\EscolaAluno.pdb
 C:\Users\fic\source\repos\Escola\EscolaAluno\obj\Debug\netcoreapp3.1\EscolaAluno.genruntimeconfig.cache

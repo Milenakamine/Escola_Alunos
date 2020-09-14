@@ -12,6 +12,7 @@ namespace EscolaAluno.Domains
 
         public DateTime DataNasc { get; set; }
 
+        public List<AlunosEscola> AlunosEscolas { get; set; }
 
     }
 }

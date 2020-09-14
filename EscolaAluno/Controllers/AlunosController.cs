@@ -37,8 +37,12 @@ namespace EscolaAluno.Controllers
                 if (alunos.Count == 0)
                     return NoContent();
 
-                //se existir retorno vai passar o Ok e os alunos cadastrados
-                return Ok(alunos);
+                //caso exista retorno Ok e o total de alunos cadastrados
+                return Ok(new
+                {
+                    totalCount = alunos.Count,
+                    data = alunos
+                });
             }
             catch (Exception ex)
             {
@@ -104,8 +108,7 @@ namespace EscolaAluno.Controllers
         public IActionResult Put(Guid id, Aluno a)
         {
             try
-            {  //define o id do aluno
-                a.Id = id;
+            {  
                 //edita o aluno
                 alunaRepository.Editar(a);
 
