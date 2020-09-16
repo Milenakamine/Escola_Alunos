@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EscolaAluno</name>
+    </assembly>
+    <members>
+        <member name="M:EscolaAluno.Controllers.AlunosController.Get">
+            <summary>
+            Mostra todos os alunos cadastrado 
+            </summary>
+            <returns>Lista com todos os alunos</returns>
+        </member>
+        <member name="M:EscolaAluno.Controllers.AlunosController.Get(System.Guid)">
+            <summary>
+            Mostra um único aluno
+            </summary>
+            <param name="id">ID do aluno</param>
+            <returns>Um aluno</returns>
+        </member>
+        <member name="M:EscolaAluno.Controllers.AlunosController.Post(EscolaAluno.Domains.Aluno)">
+            <summary>
+            Cadastra um novo aluno
+            </summary>
+            <param name="a">Objeto completo de Aluno</param>
+            <returns>Aluno cadastrado</returns>
+        </member>
+        <member name="M:EscolaAluno.Controllers.AlunosController.Put(System.Guid,EscolaAluno.Domains.Aluno)">
+            <summary>
+            Altera determinado aluno
+            </summary>
+            <param name="id">ID do aluno</param>
+            <param name="a">Objeto Aluno com as alterações</param>
+            <returns>Info do aluno alterado</returns>
+        </member>
+        <member name="M:EscolaAluno.Controllers.AlunosController.Delete(System.Guid)">
+            <summary>
+            Exclui um aluno
+            </summary>
+            <param name="id">ID do aluno</param>
+            <returns>ID excluído</returns>
+        </member>
+        <member name="M:EscolaAluno.Controllers.EscolasController.Post(System.Collections.Generic.List{EscolaAluno.Domains.AlunosEscola})">
+            <summary>
+            Cadastra uma escola
+            </summary>
+            <param name="alunosEscolas"></param>
+            <returns>Escola cadastrada</returns>
+        </member>
+        <member name="M:EscolaAluno.Controllers.EscolasController.Get">
+            <summary>
+            Mostra todas as escolas cadastradas
+            </summary>
+            <returns>Lista com todas as escolas</returns>
+        </member>
+        <member name="M:EscolaAluno.Controllers.EscolasController.GetById(System.Guid)">
+            <summary>
+            Mostra uma única escola
+            </summary>
+            <returns>Uma escola</returns>
+        </member>
+    </members>
+</doc>

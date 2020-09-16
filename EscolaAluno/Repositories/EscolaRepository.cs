@@ -52,6 +52,7 @@ namespace EscolaAluno.Repositories
             }
         }
 
+
         public Escola BuscarPorId(Guid id)
         {
             try

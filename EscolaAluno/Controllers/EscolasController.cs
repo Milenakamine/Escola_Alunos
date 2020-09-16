@@ -21,6 +21,11 @@ namespace EscolaAluno.Controllers
             escolaRepository = new EscolaRepository();
         }
 
+        /// <summary>
+        /// Cadastra uma escola
+        /// </summary>
+        /// <param name="alunosEscolas"></param>
+        /// <returns>Escola cadastrada</returns>
         [HttpPost]
         public IActionResult Post(List<AlunosEscola> alunosEscolas)
         {
@@ -37,6 +42,10 @@ namespace EscolaAluno.Controllers
         }
 
 
+        /// <summary>
+        /// Mostra todas as escolas cadastradas
+        /// </summary>
+        /// <returns>Lista com todas as escolas</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -55,6 +64,11 @@ namespace EscolaAluno.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Mostra uma única escola
+        /// </summary>
+        /// <returns>Uma escola</returns>
 
         [HttpGet("{id}")]
         public IActionResult GetById(Guid id)

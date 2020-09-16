@@ -23,7 +23,10 @@ namespace EscolaAluno.Controllers
 
 
 
-
+        /// <summary>
+        /// Mostra todos os alunos cadastrado 
+        /// </summary>
+        /// <returns>Lista com todos os alunos</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -54,6 +57,11 @@ namespace EscolaAluno.Controllers
 
 
         // GET api/<AlunoController>/5
+        /// <summary>
+        /// Mostra um único aluno
+        /// </summary>
+        /// <param name="id">ID do aluno</param>
+        /// <returns>Um aluno</returns>
         [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
@@ -81,6 +89,11 @@ namespace EscolaAluno.Controllers
 
 
         // POST api/<AlunoController>
+        /// <summary>
+        /// Cadastra um novo aluno
+        /// </summary>
+        /// <param name="a">Objeto completo de Aluno</param>
+        /// <returns>Aluno cadastrado</returns>
         [HttpPost]
         public IActionResult Post(Aluno a)
         {
@@ -104,6 +117,12 @@ namespace EscolaAluno.Controllers
 
 
         // PUT api/<AlunoController>/5
+        /// <summary>
+        /// Altera determinado aluno
+        /// </summary>
+        /// <param name="id">ID do aluno</param>
+        /// <param name="a">Objeto Aluno com as alterações</param>
+        /// <returns>Info do aluno alterado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, Aluno a)
         {
@@ -126,6 +145,11 @@ namespace EscolaAluno.Controllers
 
 
         // DELETE api/<AlunoController>/5
+        /// <summary>
+        /// Exclui um aluno
+        /// </summary>
+        /// <param name="id">ID do aluno</param>
+        /// <returns>ID excluído</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
